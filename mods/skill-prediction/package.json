@@ -1,0 +1,6 @@
+{
+	"main": "lib",
+	"name": "skill-prediction",
+	"author": "Pinkie Pie / many others",
+	"description": "Simulates skills client-side, eliminating ping-based delays and animation lock."
+}
