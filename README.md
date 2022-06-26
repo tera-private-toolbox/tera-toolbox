@@ -1,7 +1,7 @@
 # TERA Toolbox
 * Next generation of Tera-Proxy: Automatic updates, a graphical user interface, automated client mods, a direct connection to the game client (allowing e.g. realtime datacenter queries), and a lot more!
 * Extended support for patch v100.02
-* Originally forked from https://github.com/tera-toolbox/tera-toolbox
+* Originally forked from [Tera-Toolbox](https://github.com/tera-toolbox/tera-toolbox)
 
 ## FAQ
 * Some of the mods might be not available, please wait for Devs updating it.
