@@ -1,0 +1,237 @@
+{
+    "version": 19,
+    "data": {
+        "_version": 19,
+        "Mode": 0,
+        "StreamMode": false,
+        "OnlyParty": false,
+        "RaidAutoChange": false,
+        "GuardianAutoChange": false,
+        "ShowStyle": false,
+        "ActionScripts": false,
+        "PvpTraps": false,
+        "Hit_Me": false,
+        "Hit_Other": false,
+        "Hit_Damage": false,
+        "Hit_All": false,
+        "HideFireworks": true,
+        "HideServantBalloons": false,
+        "Hideguildlogos": false,
+        "HideMonsterDeathAnimation": false,
+        "HideHpNumbers": false,
+        "HideMpNumbers": false,
+        "HideMySummons": false,
+        "HideOthersSummons": false,
+        "HideMyServants": false,
+        "HideOthersServants": false,
+        "MuteOthersVoice": false,
+        "HideAllAbnormalities": false,
+        "HideAllProjectiles": false,
+        "HideOwnBlacklistedAbns": true,
+        "HideBlacklistedAbnormalities": false,
+        "HideBlacklistedProjectiles": false,
+        "HideBlacklistedNpcs": false,
+        "HideBlacklistedSkills": false,
+        "HideBlacklistedDrop": false,
+        "OwnAbnormalsBlacklist": [
+            4850,
+            48732,
+            48733,
+            48734,
+            48735,
+            48736,
+            48737,
+            48738,
+            48739,
+            70251,
+            70252,
+            70253,
+            70254,
+            70255,
+            70256,
+            776021,
+            905434,
+            47660800,
+            47660900,
+            47661000,
+            47662300,
+            99006000,
+            99007200,
+            999001011
+        ],
+        "AbnormalitiesBlacklist": [],
+        "ProjectilesBlacklist": [
+            270120,
+            270220,
+            270320,
+            270420,
+            270520,
+            270620,
+            270720,
+            270820,
+            270920,
+            271020
+        ],
+        "PlayersBlacklist": [],
+        "ClassesBlacklist": [],
+        "RolesBlacklist": [],
+        "NpcsBlacklist": [],
+        "DropBlacklist": [
+            8000,
+            8001,
+            8002,
+            8005,
+            8008,
+            8009,
+            8010,
+            8011,
+            8012,
+            8013,
+            8014,
+            8015,
+            8016,
+            8017,
+            8018,
+            8019,
+            8020,
+            8021,
+            8022,
+            8023
+        ],
+        "ClassesData": {
+            "1": {
+                "name": "warrior",
+                "model": 1,
+                "CD_SkillsBlacklist": [],
+                "CD_HideBlacklistedSkills": false,
+                "role": [
+                    "dps"
+                ],
+                "isHidden": false
+            },
+            "2": {
+                "name": "lancer",
+                "model": 2,
+                "CD_SkillsBlacklist": [],
+                "CD_HideBlacklistedSkills": false,
+                "role": [
+                    "tank"
+                ],
+                "isHidden": false
+            },
+            "3": {
+                "name": "slayer",
+                "model": 3,
+                "CD_SkillsBlacklist": [],
+                "CD_HideBlacklistedSkills": false,
+                "role": [
+                    "dps"
+                ],
+                "isHidden": false
+            },
+            "4": {
+                "name": "berserker",
+                "model": 4,
+                "CD_SkillsBlacklist": [],
+                "CD_HideBlacklistedSkills": false,
+                "role": [
+                    "dps"
+                ],
+                "isHidden": false
+            },
+            "5": {
+                "name": "sorcerer",
+                "model": 5,
+                "CD_SkillsBlacklist": [],
+                "CD_HideBlacklistedSkills": false,
+                "role": [
+                    "dps",
+                    "ranged"
+                ],
+                "isHidden": false
+            },
+            "6": {
+                "name": "archer",
+                "model": 6,
+                "CD_SkillsBlacklist": [],
+                "CD_HideBlacklistedSkills": false,
+                "role": [
+                    "dps",
+                    "ranged"
+                ],
+                "isHidden": false
+            },
+            "7": {
+                "name": "priest",
+                "model": 7,
+                "CD_SkillsBlacklist": [],
+                "CD_HideBlacklistedSkills": false,
+                "role": [
+                    "healer"
+                ],
+                "isHidden": false
+            },
+            "8": {
+                "name": "mystic",
+                "model": 8,
+                "CD_SkillsBlacklist": [],
+                "CD_HideBlacklistedSkills": false,
+                "role": [
+                    "healer"
+                ],
+                "isHidden": false
+            },
+            "9": {
+                "name": "reaper",
+                "model": 9,
+                "CD_SkillsBlacklist": [],
+                "CD_HideBlacklistedSkills": false,
+                "role": [
+                    "dps"
+                ],
+                "isHidden": false
+            },
+            "10": {
+                "name": "gunner",
+                "model": 10,
+                "CD_SkillsBlacklist": [],
+                "CD_HideBlacklistedSkills": false,
+                "role": [
+                    "dps",
+                    "ranged"
+                ],
+                "isHidden": false
+            },
+            "11": {
+                "name": "brawler",
+                "model": 11,
+                "CD_SkillsBlacklist": [],
+                "CD_HideBlacklistedSkills": false,
+                "role": [
+                    "tank"
+                ],
+                "isHidden": false
+            },
+            "12": {
+                "name": "ninja",
+                "model": 12,
+                "CD_SkillsBlacklist": [],
+                "CD_HideBlacklistedSkills": false,
+                "role": [
+                    "dps"
+                ],
+                "isHidden": false
+            },
+            "13": {
+                "name": "valkyrie",
+                "model": 13,
+                "CD_SkillsBlacklist": [],
+                "CD_HideBlacklistedSkills": false,
+                "role": [
+                    "dps"
+                ],
+                "isHidden": false
+            }
+        }
+    }
+}

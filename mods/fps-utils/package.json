@@ -1,0 +1,11 @@
+{
+	"main": "lib",
+	"name": "fps-utils",
+	"author": "Risenio",
+	"description": "A free script filled with features dedicated to improve your fps.",
+	"version": "19",
+	"homepage": "https://github.com/Risenio/fps-utils/wiki",
+	"keywords": ["tera", "fps", "tera-fps", "tera-proxy", "tera-toolbox", "tera-online", "fps-utils", "optimization"],
+	"contributors": ["Saegusae", "codeagon", "SerenTera", "Kyoukaya", "SaltyMonkey", "Leyki"],
+	"repository": { "type": "git", "url": "git+https://github.com/Risenio/fps-utils.git" }
+}
