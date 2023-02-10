@@ -4,11 +4,10 @@
   "description": "Encryption and decryption of TERA protocol streams.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tera-toolbox/tera-network-crypto.git"
+    "url": "git+https://github.com/tera-private-toolbox/tera-network-crypto.git"
   },
   "author": "Caali",
   "contributors": [
-    "Pinkie Pie",
-    "meishu"
+    "Pinkie Pie"
   ]
 }
