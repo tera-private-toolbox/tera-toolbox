@@ -2,7 +2,7 @@
 'use strict';
 require('module').wrapper[0] += `'use strict';`;
 
-const DiscordURL = 'https://discord.gg/659YbNY';
+const SupportURL = 'https://github.com/tera-private-toolbox/tera-toolbox/issues';
 
 const { app } = require('electron');
 const path = require('path');
@@ -163,7 +163,6 @@ async function updateSelf() {
         if (relpath.startsWith('node_modules/tera-client-interface/scanner/')) {
             console.log('[update] - Your anti-virus software most likely falsely detected it to be a virus.');
             console.log('[update] - Please whitelist TERA Toolbox in your anti-virus!');
-            console.log(`[update] - For further information, check the #toolbox-faq channel in ${DiscordURL}!`);
         } else if (relpath === 'node_modules/tera-client-interface/tera-client-interface.dll') {
             console.log('[update] - This is most likely caused by an instance of the game that is still running.');
             console.log('[update] - Close all game clients or restart your computer, then try again!');
@@ -218,7 +217,7 @@ function main() {
         // Perform self-update
         updateSelf().then(errors => {
             if (errors && errors.length > 0) {
-                let errmsg = `TERA Toolbox was unable to update itself. Please consult the #toolbox-faq and #help channels in ${DiscordURL} for further information.\n>> MAKE SURE TO READ THE CHANNEL DESCRIPTION FIRST <<\n\nThe full error message is:\n\n------------------------------\n`;
+                let errmsg = `TERA Toolbox was unable to update itself. If the problem persists, ask here ${SupportURL} for help!\n\nThe full error message is:\n\n------------------------------\n`;
                 errmsg += errors.join('\n------------------------------\n');
                 errmsg += '\n------------------------------\n\nThe program will now be terminated.';
 
@@ -239,7 +238,7 @@ function main() {
                         dialogAndQuit({
                             type: 'error',
                             title: 'Electron update error!',
-                            message: `TERA Toolbox was unable to update Electron. Please ask in ${DiscordURL} for help!\n>> MAKE SURE TO READ THE CHANNEL DESCRIPTION FIRST <<\n\nThe full error message is:\n${e}\n\nThe program will now be terminated.`
+                            message: `TERA Toolbox was unable to update Electron. If the problem persists, ask here ${SupportURL} for help!\n\nThe full error message is:\n${e}\n\nThe program will now be terminated.`
                         });
                     });
                 } else {
@@ -250,7 +249,7 @@ function main() {
             dialogAndQuit({
                 type: 'error',
                 title: 'Self-update error!',
-                message: `TERA Toolbox was unable to update itself. Please ask in ${DiscordURL} for help!\n>> MAKE SURE TO READ THE CHANNEL DESCRIPTION FIRST <<\n\nThe full error message is:\n${e}\n\nThe program will now be terminated.`
+                message: `TERA Toolbox was unable to update itself. If the problem persists, ask here ${SupportURL} for help!\n\nThe full error message is:\n${e}\n\nThe program will now be terminated.`
             });
         });
     }

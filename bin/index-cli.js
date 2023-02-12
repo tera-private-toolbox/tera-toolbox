@@ -2,7 +2,7 @@
 'use strict';
 require('module').wrapper[0] += `'use strict';`;
 
-const DiscordURL = 'https://discord.gg/659YbNY';
+const SupportURL = 'https://github.com/tera-private-toolbox/tera-toolbox/issues';
 
 // Update
 async function updateSelf() {
@@ -34,7 +34,6 @@ async function updateSelf() {
         if (relpath.startsWith('node_modules/tera-client-interface/scanner/')) {
             console.log('[update] - Your anti-virus software most likely falsely detected it to be a virus.');
             console.log('[update] - Please whitelist TERA Toolbox in your anti-virus!');
-            console.log(`[update] - For further information, check the #toolbox-faq channel in ${DiscordURL}!`);
         } else if (relpath === 'node_modules/tera-client-interface/tera-client-interface.dll') {
             console.log('[update] - This is most likely caused by an instance of the game that is still running.');
             console.log('[update] - Close all game clients or restart your computer, then try again!');
@@ -70,11 +69,11 @@ function main() {
                 run();
             } else {
                 console.error('[update] ERROR: Unable to perform self-update!');
-                console.error(`[update] ERROR: Please join ${DiscordURL} and check the #info, #toolbox-faq, and #help channels for further instructions.`);
+                console.error(`[update] ERROR: If the problem persists, ask here ${SupportURL} for help.`);
             }
         }).catch(e => {
             console.error('[update] ERROR: Unable to perform self-update!');
-            console.error(`[update] ERROR: Please join ${DiscordURL} and check the #info and #help channels for further instructions.`);
+            console.error(`[update] ERROR: If the problem persists, ask here ${SupportURL} for help.`);
             console.error('[update] ERROR: The full error message is:');
             console.error('-----------------------------------------------');
             console.error(e);

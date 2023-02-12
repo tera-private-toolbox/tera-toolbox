@@ -15,7 +15,7 @@ function checkRuntimeCompatibility() {
 async function initGlobalSettings(DevMode = false) {
     global.TeraProxy = {
         DevMode: !!DevMode,
-        DiscordUrl: 'https://discord.gg/dUNDDtw',
+        DiscordUrl: 'https://github.com/tera-private-toolbox/tera-toolbox/issues',
         SupportUrl: 'https://github.com/tera-private-toolbox/tera-toolbox/issues',
         GUIMode: !!process.versions.electron,
         IsAdmin: await isAdmin(),
