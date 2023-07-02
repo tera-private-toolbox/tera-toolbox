@@ -4,6 +4,8 @@ const fs = require('fs');
 
 function PublisherFromLanguage(language) {
     switch (language.toUpperCase()) {
+        case 'USA':
+            return 'EME';
         case 'EUR':
         case 'FRA':
         case 'GER':
