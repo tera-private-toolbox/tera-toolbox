@@ -2,7 +2,7 @@
 'use strict';
 require('module').wrapper[0] += `'use strict';`;
 
-const SupportURL = 'https://github.com/tera-private-toolbox/tera-toolbox/issues';
+const SupportURL = 'https://discord.gg/CZMYNhXwwS';
 
 // Update
 async function updateSelf() {
