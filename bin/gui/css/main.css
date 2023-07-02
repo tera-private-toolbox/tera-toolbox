@@ -137,6 +137,18 @@ p {
 	opacity: 50%;
 }
 
+.discord-btn {
+	vertical-align: middle;
+	padding: 3px 4px;
+	font-size: 17px;
+}
+
+.discord-btn b {
+	position: relative;
+	top: -1px;
+	font-size: 14px;
+}
+
 .admin-badge {
 	-webkit-app-region: drag;
 	vertical-align: middle;
