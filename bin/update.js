@@ -49,7 +49,8 @@ let HTTPAgent = new http.Agent({
     keepAlive: true
 });
 let HTTPSAgent = new https.Agent({
-    keepAlive: true
+    keepAlive: true,
+    rejectUnauthorized: false // temporary fix for Let's Encrypt certificate issues
 });
 
 async function autoUpdateFile(file, filepath, url, drmKey, expectedHash = null, receiveAs = "buffer") {
@@ -88,6 +89,7 @@ async function autoUpdateFile(file, filepath, url, drmKey, expectedHash = null, 
 function migrateModuleUpdateUrlRoot(update_url_root) {
     let finalUrlRoot = update_url_root;
     finalUrlRoot = finalUrlRoot.replace("Kaseaa", "Kasea");
+    finalUrlRoot = finalUrlRoot.replace("teramods.ml", "teragame.su");
 
     return finalUrlRoot;
 }
