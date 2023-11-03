@@ -127,11 +127,11 @@ initGlobalSettings(false).then(() => {
                     autoUpdate(ModuleFolder, ProxyConfig.updatelog, true).then(updateResult => {
                         updateResult.legacy.forEach(mod => console.warn(mui.get('loader-cli/warning-update-mod-not-supported', { name: mod.name })));
                         updateResult.failed.forEach(mod => console.error(mui.get('loader-cli/error-update-mod-failed', { name: mod.name })));
-
-                        RunProxy(ModuleFolder, ProxyConfig);
                     }).catch(e => {
                         console.error(mui.get('loader-cli/error-update-failed'));
                         console.error(e);
+                    }).finally(() => {
+                        RunProxy(ModuleFolder, ProxyConfig);
                     });
                 }
             }

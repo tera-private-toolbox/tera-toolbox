@@ -114,7 +114,6 @@ async function StartProxy(ModuleFolder, ProxyConfig) {
 		console.warn(mui.get("loader-gui/warning-noupdate-3"));
 		console.warn(mui.get("loader-gui/warning-noupdate-4"));
 		console.warn(mui.get("loader-gui/warning-noupdate-5"));
-		return _StartProxy(ModuleFolder, ProxyConfig);
 	} else {
 		const autoUpdate = require("./update");
 
@@ -122,14 +121,13 @@ async function StartProxy(ModuleFolder, ProxyConfig) {
 			const updateResult = await autoUpdate(ModuleFolder, ProxyConfig.updatelog, true);
 			updateResult.legacy.forEach(mod => console.warn(mui.get("loader-gui/warning-update-mod-not-supported", { "name": mod.name })));
 			updateResult.failed.forEach(mod => console.error(mui.get("loader-gui/error-update-mod-failed", { "name": mod.name })));
-
-			return _StartProxy(ModuleFolder, ProxyConfig);
 		} catch (e) {
 			console.error(mui.get("loader-gui/error-update-failed"));
 			console.error(e);
-			return false;
 		}
 	}
+
+	return _StartProxy(ModuleFolder, ProxyConfig);
 }
 
 async function StopProxy() {
