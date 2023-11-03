@@ -1,5 +1,7 @@
 // Imports
 const fetch = require('node-fetch');
+const http = require('http');
+const https = require('https');
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
@@ -40,9 +42,27 @@ class Updater extends EventEmitter {
     }
 
     buildPath(relpath) { return path.join(__dirname, '..', relpath); }
-    buildURL(serverIndex, relpath) { return `${AutoUpdateServers[serverIndex]}${this.branch}/${relpath}`; }
-    async downloadRaw(serverIndex, relpath) { return await (await fetch(this.buildURL(serverIndex, relpath))).buffer(); }
-    async downloadJSON(serverIndex, relpath) { return await (await fetch(this.buildURL(serverIndex, relpath))).json(); }
+    buildURL(serverIndex, relpath) { return new URL(`${AutoUpdateServers[serverIndex]}${this.branch}/${relpath}`); }
+
+    async fetchUrl(serverIndex, relpath) {
+        const HTTPAgent = new http.Agent({
+            'keepAlive': true
+        });
+        const HTTPSAgent = new https.Agent({
+            'keepAlive': true,
+            'rejectUnauthorized': false // temporary fix for Let's Encrypt certificate issues
+        });
+        const fileUrl = this.buildURL(serverIndex, relpath);
+        return await fetch(fileUrl, { 'agent': (fileUrl.protocol === 'https:') ? HTTPSAgent : HTTPAgent });
+    }
+
+    async downloadRaw(serverIndex, relpath) {
+        return await (await this.fetchUrl(serverIndex, relpath)).buffer();
+    }
+
+    async downloadJSON(serverIndex, relpath) {
+        return await (await this.fetchUrl(serverIndex, relpath)).json();
+    }
 
     async check(serverIndex = 0) {
         this.emit('check_start', serverIndex);
