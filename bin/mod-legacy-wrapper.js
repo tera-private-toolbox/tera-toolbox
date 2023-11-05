@@ -1,4 +1,6 @@
 ﻿function DeprecationWarning(mod, prop) {
+    if (!global.TeraProxy.DevMode) return;
+
     const stack = new Error().stack.split('\n').slice(1);
     while (stack.length > 0 && stack[0].includes(__dirname))
         stack.shift();

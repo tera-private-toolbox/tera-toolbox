@@ -7,6 +7,6 @@
         "cliName": "Bugfix",
         "guiName": "Bugfix"
     },
-    "servers": ["https://raw.githubusercontent.com/tera-toolbox-mods/bugfix/master/"],
+    "servers": ["https://raw.githubusercontent.com/tera-private-toolbox/bugfix/master/"],
     "conflicts": ["swim-fix", "chat-sanitizer"]
 }

@@ -2,7 +2,7 @@
 'use strict';
 require('module').wrapper[0] += `'use strict';`;
 
-const DiscordURL = 'https://discord.gg/659YbNY';
+const DiscordURL = 'https://discord.gg/CZMYNhXwwS';
 
 // Update
 async function updateSelf() {
@@ -66,9 +66,7 @@ function main() {
         run();
     } else {
         updateSelf().then(success => {
-            if (success) {
-                run();
-            } else {
+            if (!success) {
                 console.error('[update] ERROR: Unable to perform self-update!');
                 console.error(`[update] ERROR: Please join ${DiscordURL} and check the #info, #toolbox-faq, and #help channels for further instructions.`);
             }
@@ -79,6 +77,8 @@ function main() {
             console.error('-----------------------------------------------');
             console.error(e);
             console.error('-----------------------------------------------');
+        }).finally(() => {
+            run();
         });
     }
 }

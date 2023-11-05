@@ -1,0 +1,17 @@
+{
+    "disableAutoUpdate": false,
+    "name": "fps-utils",
+    "author": "Risenio",
+    "readmePath": "./README.md",
+    "description": "A free script filled with features dedicated to improve your fps.",
+    "contributors": ["Saegusae","codeagon","SerenTera","Kyoukaya","SaltyMonkey","Leyki"],
+    "version": "19",
+    "options": {
+        "cliName": "FPS",
+        "guiName": "Fps Utils",
+        "settingsVersion": 19,
+        "settingsFile": "config.json",
+        "settingsMigrator": "./lib/setting_migration.js"
+    },
+    "servers": ["https://raw.githubusercontent.com/tera-private-mods/fps-utils/master/"]
+}

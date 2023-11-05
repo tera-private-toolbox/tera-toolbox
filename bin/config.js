@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const { LanguageNames } = require('tera-toolbox-mui');
 const ConfigFilePath = path.join(__dirname, '..', 'config.json');
 
 const bigIntSerializator = (key, value) => {
@@ -13,9 +14,20 @@ const bigIntDeserializator = (key, value) => {
     return value;
 };
 
+const getUiLanguage = () => {
+    const locale = Intl.DateTimeFormat().resolvedOptions().locale;
+    if (LanguageNames[locale]) {
+        return locale;
+    } else if (LanguageNames[locale.split('-')[0]]) {
+        return locale.split('-')[0];
+    }
+    return 'en';
+};
+
+const uilanguage = getUiLanguage();
 const defaultSettings = {
-    branch: 'beta',
-    uilanguage: 'en',
+    branch: 'master',
+    uilanguage,
     updatelog: false,
     devmode: false,
     noselfupdate: false,
@@ -25,6 +37,9 @@ const defaultSettings = {
 };
 
 function loadConfig() {
+    if (!fs.existsSync(ConfigFilePath)) {
+        return [defaultSettings, 0];
+    }
     let result = null;
     try {
         result = fs.readFileSync(ConfigFilePath, 'utf8');

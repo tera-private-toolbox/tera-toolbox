@@ -1,6 +1,7 @@
+const fs = require("fs");
 const path = require("path");
-const exec = require('child_process').exec;
-const { app, BrowserWindow, powerMonitor, Tray, Menu, ipcMain, shell } = require("electron");
+const exec = require("child_process").exec;
+const { app, BrowserWindow, powerMonitor, Tray, Menu, ipcMain, shell, dialog } = require("electron");
 const DataFolder = path.join(__dirname, "..", "data");
 const ModuleFolder = path.join(__dirname, "..", "mods");
 
@@ -56,7 +57,7 @@ function Migration() {
 }
 
 // Installed mod management
-const AvailableModuleListUrl = "https://raw.githubusercontent.com/tera-toolbox/tera-mods/master/modulelist.json";
+const AvailableModuleListUrl = "https://raw.githubusercontent.com/tera-private-toolbox/tera-mods/master/modulelist.json";
 const { listModuleInfos, installModule, uninstallModule, toggleAutoUpdate, toggleLoad } = require("tera-mod-management");
 
 let CachedAvailableModuleList = null;
@@ -121,14 +122,13 @@ async function StartProxy(ModuleFolder, ProxyConfig) {
 			const updateResult = await autoUpdate(ModuleFolder, ProxyConfig.updatelog, true);
 			updateResult.legacy.forEach(mod => console.warn(mui.get("loader-gui/warning-update-mod-not-supported", { "name": mod.name })));
 			updateResult.failed.forEach(mod => console.error(mui.get("loader-gui/error-update-mod-failed", { "name": mod.name })));
-
-			return _StartProxy(ModuleFolder, ProxyConfig);
 		} catch (e) {
 			console.error(mui.get("loader-gui/error-update-failed"));
 			console.error(e);
-			return false;
 		}
 	}
+
+	return _StartProxy(ModuleFolder, ProxyConfig);
 }
 
 async function StopProxy() {
@@ -305,7 +305,29 @@ ipcMain.on("close toolbox", (event) => {
 });
 
 ipcMain.on("open discord", (event) => {
-	shell.openExternal(global.TeraProxy.supportUrl)
+	shell.openExternal(global.TeraProxy.DiscordUrl)
+});
+
+ipcMain.on("save logs", (event, logs) => {
+	dialog.showSaveDialog({
+		"title": "Select the File Path to save",
+		"buttonLabel": "Save File",
+		"filters": [
+			{
+				"name": "Text Files",
+				"extensions": ["log"]
+			}, ],
+		"properties": []
+	}).then((file) => {
+		if (!file.canceled) {
+			fs.writeFile(file.filePath.toString(),
+				logs.map(r => r.text).join(""), (err) => {
+					if (err) throw err;
+				});
+		}
+	}).catch(err => {
+		console.log(err);
+	});
 });
 
 ipcMain.on("open link", (event, lnk) => {

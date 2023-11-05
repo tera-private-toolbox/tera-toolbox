@@ -88,6 +88,7 @@ async function autoUpdateFile(file, filepath, url, drmKey, expectedHash = null, 
 function migrateModuleUpdateUrlRoot(update_url_root) {
     let finalUrlRoot = update_url_root;
     finalUrlRoot = finalUrlRoot.replace("Kaseaa", "Kasea");
+    finalUrlRoot = finalUrlRoot.replace("teramods.ml", "teragame.su");
 
     return finalUrlRoot;
 }

@@ -1,0 +1,6 @@
+{
+    "servers": ["https://raw.githubusercontent.com/tera-private-toolbox/library/master/"],
+    "supportUrl": "https://github.com/tera-private-toolbox/library/issues",
+    "name": "library",
+    "disableAutoUpdate": false
+}
