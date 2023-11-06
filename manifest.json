@@ -2,9 +2,9 @@
 	"files": {
 		"bin/config.js": "5492fd4dbe6d51a592d00e0bcc1e82c350753acd7bf2aaf01f9b900bfc2ee1fc",
 		"bin/connection-manager.js": "032d0e5c021ffc3d0dcc5c3e33326239be010a19c4ac710ef0e48e94b5235d94",
-		"bin/gui/assets/icon.ico": "eddf1fe34c998df2b607cd36f69334d9890a7f150917b0aa4d1fb6db891aa5f0",
-		"bin/gui/assets/tb.gif": "3bf32d7df587cb85807341232122a26c5eeb9a2b7840eb12a19b45d1622bae69",
-		"bin/gui/css/app.css": "0e85c792522aa7ac8a9a5e98e71cf9be6e1f56a3f9fb8d14562ad348c6cd2a4e",
+		"bin/gui/assets/icon.ico": "51f7165d478b2da5ac0a56cb27cf0080a81b9af55e40a9bbe38bf0933a8b0e6b",
+		"bin/gui/assets/tb.gif": "e018e504fb1821b1e6973484cd78730f1ce0f1c5f0833d7be2477027bde62c9e",
+		"bin/gui/css/app.css": "718f986adcd0467b1a6a39a42117eecb02ac28116447cd4f4d5c455e1fd4e60b",
 		"bin/gui/css/splash.css": "d90151a98c1c8228e1169dc62cb98030bcc0d68ab23473fcb30ff0c5aa28fc84",
 		"bin/gui/fonts/roboto-all-400-normal.woff": "55110586d3719c3e8bdaa21f06e4cc1c0a7451abbae662344cbd4411536b585f",
 		"bin/gui/fonts/roboto-cyrillic-400-normal.woff2": "8dd3b91ca60e6a0486326c5c275590dd1d753240c2efa9f94730815813997fee",
@@ -86,7 +86,7 @@
 		"node_modules/tera-mod-ui/README.md": "b08543a4e153b9fbf72ac1dc63463a762a847ed376026e7971567a07528ede17",
 		"node_modules/tera-mod-ui/renderer.js": "daec25e8489c9b98711dfcc37068daa7130f5e607bba8f9fea287ce73ccda2f3",
 		"node_modules/tera-mod-ui/settings.js": "5f310bc916e5a76d15d2af13171d6cfb237a3f67bb825f65c862e7201319ad70",
-		"node_modules/tera-mod-ui/settings_ui/icon.ico": "eddf1fe34c998df2b607cd36f69334d9890a7f150917b0aa4d1fb6db891aa5f0",
+		"node_modules/tera-mod-ui/settings_ui/icon.ico": "51f7165d478b2da5ac0a56cb27cf0080a81b9af55e40a9bbe38bf0933a8b0e6b",
 		"node_modules/tera-mod-ui/settings_ui/index.css": "9346a2d6ff844849761089360d36b38f52cac66ad05c9620c86f6fc477ee1097",
 		"node_modules/tera-mod-ui/settings_ui/index.html": "b2498a19e956945237b535f41711307466dcfd95601a72d3c03bdf8db50fc58f",
 		"node_modules/tera-mod-ui/settings_ui/index.js": "ca0025734d2d6833559af93366d58a327e2e4afeff31339f98101a4646d71a08",
@@ -137,9 +137,9 @@
 		"node_modules/tera-vec3/README.md": "447bcb10c3d3055fbf76efeb2b31fd4d86b4dc887747d53149ea5a3652c02a87",
 		"package.json": "88a590a4d24b32a2ef7d317ff124fec2b40b431586c702908485ad9199e43bae",
 		"README.md": "7f070e76178c2db4dc3ab1b92198455e1cfee5e5a901e85ae584992d16622e39",
-		"TeraToolbox.exe": "f4ba276827967f44095d2f353581db678a7c956a872fb2dd047895ed96b256b1",
-		"TeraToolboxCLI.exe": "9e9104303238ed38fd5d00b3205506700e63441fd1e9f5addfe3ef47f3b37c02",
-		"TeraToolboxCLI_NoAdmin.exe": "785f01fb929b8c505b21220b39bff3e3a27e42153af57e48e4c060ea98ee22d0",
-		"TeraToolbox_NoAdmin.exe": "0d9fca6227175cee8567ae7a3ab3ddc48b60f7c9398f08e917f5cd6c878d1d1a"
+		"TeraToolbox.exe": "3edda249c7850fe210946390f6e2c76954ece53187d474eb325d478ff553a758",
+		"TeraToolboxCLI.exe": "19355c6b339ffbda66785440f3c4493b6f6a15062156ea52625423c466079d56",
+		"TeraToolboxCLI_NoAdmin.exe": "6452cf3c033f2e474153e2783860f7e407284f9de0840770b5213bf3f111a6c7",
+		"TeraToolbox_NoAdmin.exe": "880cf8f6113d307dfbaa0fc65cc1800e47187584877797c87294e6dafac4c37e"
 	}
 }
