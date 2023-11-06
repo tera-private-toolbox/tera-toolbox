@@ -1,6 +1,6 @@
 {
 	"files": {
-		"bin/config.js": "5492fd4dbe6d51a592d00e0bcc1e82c350753acd7bf2aaf01f9b900bfc2ee1fc",
+		"bin/config.js": "b39feb72d612aa48d639fe710431ede17c325b8ed5d1417e85df8ad6337d6aa5",
 		"bin/connection-manager.js": "032d0e5c021ffc3d0dcc5c3e33326239be010a19c4ac710ef0e48e94b5235d94",
 		"bin/gui/assets/icon.ico": "51f7165d478b2da5ac0a56cb27cf0080a81b9af55e40a9bbe38bf0933a8b0e6b",
 		"bin/gui/assets/tb.gif": "e018e504fb1821b1e6973484cd78730f1ce0f1c5f0833d7be2477027bde62c9e",
@@ -23,11 +23,11 @@
 		"bin/gui/js/splash.js": "08c7a43afb05dda3d4d6e4995f1ac702c693502501a5cf5aa39e24a024ef7d9c",
 		"bin/gui/main.html": "de00a687400e7863695844c7741cca25c95d5aaafe328b609057c94bfbebb0a3",
 		"bin/gui/splash.html": "1e3cefdb016dd0236900a5fc0a4ae415b4109d429f83a8f5673d3c9ee8711b2d",
-		"bin/index-cli.js": "f625e376ded810df4e82078468cf9122eb5449582660f451da168ada2b03acbb",
-		"bin/index-gui.js": "71cc8289083e16454969bfdecd7b8c8d0a1091396ed5127c4a604edcc31698d1",
+		"bin/index-cli.js": "4a58bdc34044b1b5917d4664dc88074445c54d6766620a2618af7bce9820621c",
+		"bin/index-gui.js": "cef60eede0c68dba5b2f1d1422b76426a956a363c69a14aff3fe7b7dbe8a3c71",
 		"bin/install-electron.js": "17b03f96f54dccb40eaba88b9ab21c14609eac91cb378ff0883b65b0078f105b",
-		"bin/loader-cli.js": "77f0e29907ef1dace42a113a1ddb126b660a5c9cd6468475b564b3e5b1f00c41",
-		"bin/loader-gui.js": "4676446333fdff920d37d8b3b3f2363087b610c9d4f2a3651b8a800ceb4dfa9e",
+		"bin/loader-cli.js": "f34b8d8dbfe4e2be84de59b2bea0b38bd6ead89fb85429d15c8484a873a464f6",
+		"bin/loader-gui.js": "aac8f494f14531e94c638243f6c38787f7aa0527cca22039bf264a24a04de180",
 		"bin/migration.js": "f779f8b0c94771e0e966e5bd350faa1fd45d4dc2621c8d3c57447ce4f1fefa14",
 		"bin/mod-legacy-wrapper.js": "bf65057ad176aab887b736480befe24ec90b0c4e1981efbceca2540ebe742927",
 		"bin/mod-manager.js": "025c11a33186f6ff56f77b3bc700c7cdf4064c745b63aeae4d5dcbbb36efb95c",

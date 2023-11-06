@@ -36,16 +36,17 @@ const defaultSettings = {
     noserverautojoin: false
 };
 
-function loadConfig() {
+function loadConfig(returnArray = false) {
     if (!fs.existsSync(ConfigFilePath)) {
-        return [defaultSettings, 0];
+        return returnArray ? [defaultSettings, 0] : defaultSettings;
     }
     let result = null;
     try {
         result = fs.readFileSync(ConfigFilePath, 'utf8');
-        return [JSON.parse(result, bigIntDeserializator), 0];
+        result = JSON.parse(result, bigIntDeserializator);
+        return returnArray ? [result, 0] : result;
     } catch (_) {
-        return [defaultSettings, 1];
+        return returnArray ? [defaultSettings, 1] : defaultSettings;
     }
 }
 
