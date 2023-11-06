@@ -167,7 +167,7 @@ function ToolboxMigration() {
     tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-network-crypto', 'bin', 'tera_network_crypto_75.node'));
     tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-network-crypto', 'bin', 'tera_network_crypto_76.node'));
     tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-network-crypto', 'bin', 'tera_network_crypto_79.node'));
-    tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-mod-ui', 'settings_ui', 'jquery-3.5.1.slim.min.js'));
+    //tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-mod-ui', 'settings_ui', 'jquery-3.5.1.slim.min.js'));
 
     // Delete no longer used mods
     tryUninstallMod('tera-game-state-helper');
