@@ -365,7 +365,7 @@ class TeraProxyGUI {
 		if (!config.gui) {
 			config.gui = {
 				enabled: true,
-				theme: "black",
+				theme: "dark",
 				autostart: false,
 				logtimes: true,
 				width: 880,
@@ -377,6 +377,16 @@ class TeraProxyGUI {
 		} else {
 			if (config.gui.logtimes === undefined) {
 				config.gui.logtimes = true;
+				SaveConfiguration(config);
+			}
+
+			// Migrate theme
+			if (["classic-white", "classic-pink", "white", "pink"].includes(config.gui.theme)) {
+				config.gui.theme = "light";
+				SaveConfiguration(config);
+			}
+			if (["classic-black", "black", "grey"].includes(config.gui.theme)) {
+				config.gui.theme = "dark";
 				SaveConfiguration(config);
 			}
 
@@ -394,7 +404,7 @@ class TeraProxyGUI {
 			minHeight: 514,
 			icon: guiIcon,
 			frame: false,
-			backgroundColor: "#292F33",
+			backgroundColor: "#1e1e1e",
 			resizable: true,
 			centered: true,
 			show: false,
