@@ -160,6 +160,8 @@ function ToolboxMigration() {
     tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-client-interface', 'scanner', 'scanner_75.node'));
     tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-client-interface', 'scanner', 'scanner_76.node'));
     tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-client-interface', 'scanner', 'scanner_79.node'));
+    tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-client-interface', 'scanner', 'scanner_85.node'));
+    tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-client-interface', 'scanner', 'scanner_88.node'));
     tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-network-crypto', 'binding.gyp'));
     tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-network-crypto', 'fallback.js'));
     tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-network-crypto', 'main.cpp'));
@@ -167,7 +169,16 @@ function ToolboxMigration() {
     tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-network-crypto', 'bin', 'tera_network_crypto_75.node'));
     tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-network-crypto', 'bin', 'tera_network_crypto_76.node'));
     tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-network-crypto', 'bin', 'tera_network_crypto_79.node'));
+    tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-network-crypto', 'bin', 'tera_network_crypto_85.node'));
+    tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-network-crypto', 'bin', 'tera_network_crypto_88.node'));
     //tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-mod-ui', 'settings_ui', 'jquery-3.5.1.slim.min.js'));
+    tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-mod-ui', 'settings_ui', 'themes', 'black.css'));
+    tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-mod-ui', 'settings_ui', 'themes', 'classic-black.css'));
+    tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-mod-ui', 'settings_ui', 'themes', 'classic-pink.css'));
+    tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-mod-ui', 'settings_ui', 'themes', 'classic-white.css'));
+    tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-mod-ui', 'settings_ui', 'themes', 'grey.css'));
+    tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-mod-ui', 'settings_ui', 'themes', 'pink.css'));
+    tryUnlink(path.join(__dirname, '..', 'node_modules', 'tera-mod-ui', 'settings_ui', 'themes', 'white.css'));
 
     // Delete no longer used mods
     tryUninstallMod('tera-game-state-helper');
