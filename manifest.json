@@ -132,7 +132,7 @@
 		"TeraToolboxCLI.exe": "19355c6b339ffbda66785440f3c4493b6f6a15062156ea52625423c466079d56",
 		"TeraToolboxCLI_NoAdmin.exe": "6452cf3c033f2e474153e2783860f7e407284f9de0840770b5213bf3f111a6c7",
 		"TeraToolbox_NoAdmin.exe": "880cf8f6113d307dfbaa0fc65cc1800e47187584877797c87294e6dafac4c37e",
-		"node_modules/tera-mod-ui/settings_ui/css/app.css": "3b5b507780d55ea63a81c756a52a17ef9a463a3430d2de2baaf650ca8b4c26d1",
+		"node_modules/tera-mod-ui/settings_ui/css/app.css": "1f803d18fc1c65c1089afada98643103aaa166180f2e49604678450735afd698",
 		"node_modules/tera-mod-ui/settings_ui/fonts/roboto-all-400-normal.woff": "e41533d5c6eab361631aa3cf8bf7b8a2e6babfcc42a1aa950b2b0cd80c109b8f",
 		"node_modules/tera-mod-ui/settings_ui/fonts/roboto-cyrillic-400-normal.woff2": "495d38d4b9741e8aa4204002414069e2d8db9f3c60b60e195e4d74381462dee9",
 		"node_modules/tera-mod-ui/settings_ui/fonts/roboto-cyrillic-ext-400-normal.woff2": "b7ef2cd1159a8cbfd271ff2abe07f237a46f6fa056eefd2e9018661f93eea137",
@@ -140,6 +140,6 @@
 		"node_modules/tera-mod-ui/settings_ui/fonts/roboto-latin-400-normal.woff2": "f6734f8177112c0839b961f96d813fcb189d81b60e96c33278c1983b6f419615",
 		"node_modules/tera-mod-ui/settings_ui/fonts/roboto-latin-ext-400-normal.woff2": "3c23eb02de6b34e30f18cfb7167abd81a2cedfd1da60dfcb71989517ab3fb431",
 		"node_modules/tera-mod-ui/settings_ui/fonts/roboto-vietnamese-400-normal.woff2": "77b24796a3d4ab521f66765651875338ed50cb9306cfe4603a3e79618e429cec",
-		"node_modules/tera-mod-ui/settings_ui/js/app.js": "1ef8e9aba6e7cb142f17fd5024c4b2d1adede65210452185cb895b00d6b70a64"
+		"node_modules/tera-mod-ui/settings_ui/js/app.js": "e7395f019573a1ab3c23118799ec3510559c80629efed593b84afa8cd9544b50"
 	}
 }
