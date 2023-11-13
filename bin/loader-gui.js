@@ -438,14 +438,14 @@ class TeraProxyGUI {
 		
 		//this.window.on('minimize', () => { this.window.hide(); });
 		this.window.on("closed", () => { StopProxy(); this.window = null; });
-		
+
 		// Initialize tray icon
 		this.tray = new Tray(guiIcon);
 		this.tray.setToolTip("TERA Toolbox");
 		this.tray.setContextMenu(Menu.buildFromTemplate([
 			{
 				"label": mui.get("loader-gui/tray/quit"),
-				"click": () => { app.exit(); }
+				"click": () => this.close()
 			}
 		]));
 
@@ -471,7 +471,7 @@ class TeraProxyGUI {
 				log(msg, "error");	
 			old_stderr(msg, ...args);
 		};
-		
+
 		// Start periodic update check
 		if (!config.noselfupdate) {
 			startUpdateCheck((config.branch || "master").toLowerCase(), () => {
@@ -486,7 +486,7 @@ class TeraProxyGUI {
 					return;
 
 				console.log(mui.get("loader-gui/proxy-stopping"));
-				
+
 				StopProxy().then(() => {
 					this.window.webContents.send("proxy running", false);
 					console.log(mui.get("loader-gui/proxy-stopped"));
@@ -509,10 +509,7 @@ class TeraProxyGUI {
 	close() {
 		if (this.window !== null) {
 			stopUpdateCheck();
-			StopProxy();
-
-			this.window.close();
-			this.window = null;
+			app.exit();
 		}
 	}
 
