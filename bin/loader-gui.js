@@ -416,8 +416,10 @@ class TeraProxyGUI {
         // this.window.webContents.openDevTools();
 
         this.window.once('ready-to-show', () => {
-            this.window.show();
-            if (config?.gui?.maximized) this.window.maximize();
+            setTimeout(() => {
+                this.window.show();
+                if (config?.gui?.maximized) this.window.maximize();
+            }, 100);
         });
 
         this.window.on('close', () => {
