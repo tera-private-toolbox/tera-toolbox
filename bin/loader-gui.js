@@ -207,13 +207,11 @@ ipcMain.on('init', (event, _) => {
     event.sender.send('is admin', global.TeraProxy.IsAdmin);
 
     if (config.noselfupdate) {
-        /*
         console.warn(mui.get('loader-gui/warning-noselfupdate-1'));
         console.warn(mui.get('loader-gui/warning-noselfupdate-2'));
         console.warn(mui.get('loader-gui/warning-noselfupdate-3'));
         console.warn(mui.get('loader-gui/warning-noselfupdate-4'));
         console.warn(mui.get('loader-gui/warning-noselfupdate-5'));
-        */
     }
 
     if (config.gui.autostart) {
