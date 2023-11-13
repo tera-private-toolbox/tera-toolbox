@@ -413,7 +413,7 @@ class TeraProxyGUI {
 
         // this.window.loadURL('http://localhost:8080/');
         this.window.loadFile(path.join(guiRoot, 'main.html'));
-        this.window.webContents.openDevTools();
+        // this.window.webContents.openDevTools();
 
         this.window.once('ready-to-show', () => {
             this.window.show();
