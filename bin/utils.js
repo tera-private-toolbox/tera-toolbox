@@ -28,7 +28,7 @@ async function initGlobalSettings(DevMode = false) {
             console.warn('Accessing deprecated "global.TeraProxy.UILanguage", use "require(\'tera-toolbox-mui\').language" instead! Stack:');
             console.warn(new Error().stack);
             return require('tera-toolbox-mui').language;
-        },
+        }
     };
 }
 

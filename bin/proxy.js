@@ -4,6 +4,8 @@ const fs = require('fs');
 
 function PublisherFromLanguage(language) {
     switch (language.toUpperCase()) {
+        case 'USA':
+            return 'EME';
         case 'EUR':
         case 'FRA':
         case 'GER':
@@ -127,7 +129,7 @@ class TeraProxy {
         const listenPort = this.listenPort++;
         server.listen(listenPort, this.listenIp, () => {
             const { address: listen_ip, port: listen_port } = server.address();
-            console.log(mui.get('proxy/redirecting-server', { name, publisher: metadata.publisher, serverId: metadata.serverId, listen_ip, listen_port, ip, port}));
+            console.log(mui.get('proxy/redirecting-server', { name, publisher: metadata.publisher, serverId: metadata.serverId, listen_ip, listen_port, ip, port }));
         });
 
         clientInterfaceConnection.proxyServers.set(key, server);
@@ -217,7 +219,7 @@ class TeraProxy {
 
                         // Inject / patch proxied servers
                         const proxy_servers = data.servers.filter(server => !data.servers.some(other_server => other_server.id === server.id && other_server.ip === this.listenIp)).map(server => {
-                            let patched_server = Object.assign({}, server);
+                            let patched_server = { ...server };
                             if (!this.config.noslstags)
                                 patched_server.title += TagFromLanguage(client.info.language);
 
@@ -245,9 +247,9 @@ class TeraProxy {
                                 delete patched_server.address;
                             return patched_server;
                         });
-                        
+
                         if (this.config.noserverautojoin)
-                            data.default_server_id = 0
+                            data.default_server_id = 0;
 
                         data.servers = !this.config.noslstags ? [...proxy_servers, ...data.servers] : proxy_servers;
 

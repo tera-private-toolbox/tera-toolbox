@@ -3,9 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const ModLegacyWrapper = require('./mod-legacy-wrapper');
 
-const bigIntSerializator = (key, value) => {
-    return typeof value === "bigint" ? `BIGINT:${value}` : value;
-};
+const bigIntSerializator = (key, value) => (typeof value === "bigint" ? `BIGINT:${value}` : value);
 
 const bigIntDeserializator = (key, value) => {
     if (typeof value === "string" && value.startsWith("BIGINT:")) {
@@ -20,9 +18,9 @@ const setDuration = (delay) => {
     let wrappedValue = typeof delay === "bigint" ? delay : BigInt(Math.round(delay));
 
     if (wrappedValue > MAX_HANDLED_DURATION) throw new RangeError("Delay value is out of range");
-    
+
     return Number(wrappedValue);
-}
+};
 
 class ModInterfaceBase {
     constructor(parent) {
@@ -198,7 +196,7 @@ class ClientModInterface extends ModInterfaceBase {
     get language() { return this.clientInterface.info.language; }
     get majorPatchVersion() { return this.clientInterface.info.majorPatchVersion; }
     get minorPatchVersion() { return this.clientInterface.info.minorPatchVersion; }
-    get clientFolder() { return mod.clientInterface.info.path; }
+    get clientFolder() { return this.clientInterface.info.path; }
 
     // Global & network mod instances
     get globalMod() { return this.parent.getGlobalInstance().instance; }
@@ -214,7 +212,7 @@ class ClientModInterface extends ModInterfaceBase {
 
         let installer = {
             gpk: (fromPath, filename = null) => this.clientInterface.installGPK(path.join(this.info.path, fromPath), filename),
-            dll: filename => this.clientInterface.injectDLL(path.join(this.info.path, filename)),
+            dll: filename => this.clientInterface.injectDLL(path.join(this.info.path, filename))
         };
 
         try {
@@ -297,8 +295,8 @@ class NetworkModInterface extends ModInterfaceBase {
     get connection() { return this.dispatch.connection; }
     get serverId() { return this.dispatch.connection.metadata.serverId; }
     get serverList() { return this.dispatch.connection.metadata.serverList; }
-    get serverIp() { return  mod.dispatch.connection.serverConnection.remoteAddress }
-    get clientFolder() { return mod.clientInterface.info.path; }
+    get serverIp() { return this.dispatch.connection.serverConnection.remoteAddress; }
+    get clientFolder() { return this.clientInterface.info.path; }
 
     // Core mod instances
     get command() {
@@ -339,7 +337,7 @@ class NetworkModInterface extends ModInterfaceBase {
             throw new Error('last argument not a function');
 
         const dispatch = this.dispatch;
-        let hook = dispatch.hook(this.info.name, ...args, function () {
+        let hook = dispatch.hook(this.info.name, ...args, function() {
             dispatch.unhook(hook);
             return cb.apply(this, arguments);
         });
@@ -354,7 +352,7 @@ class NetworkModInterface extends ModInterfaceBase {
 
         try {
             const dispatch = this.dispatch;
-            let hook = dispatch.hook(this.info.name, ...args, function () {
+            let hook = dispatch.hook(this.info.name, ...args, function() {
                 dispatch.unhook(hook);
                 return cb.apply(this, arguments);
             });
@@ -512,7 +510,7 @@ class Mod {
                 delete require.cache[key];
         });
     }
-    
+
     get printableName() {
         if (this.info.options.cliName && this.info.options.cliName !== this.info.name)
             return `"${this.info.options.cliName}" (${this.info.rawName})`;

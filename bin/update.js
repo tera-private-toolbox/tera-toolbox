@@ -29,7 +29,7 @@ function hash(data) {
 
 function walkdir(dir, listFiles = true, listDirs = false, listRootDir = "") {
     let results = [];
-    fs.readdirSync(dir).forEach(function (file) {
+    fs.readdirSync(dir).forEach(function(file) {
         const fullpath = path.join(dir, file);
         const relpath = path.join(listRootDir, file);
         const stat = fs.statSync(fullpath);
@@ -60,27 +60,27 @@ async function autoUpdateFile(file, filepath, url, drmKey, expectedHash = null, 
 
         const requestPayload = await fetch(fileUrl, { "agent": (fileUrl.protocol === "https:") ? HTTPSAgent : HTTPAgent });
         if (!requestPayload.ok)
-            throw `ERROR: ${ url }\nCan't download file from update server (${ requestPayload.status } - ${requestPayload.statusText})! Possible causes:\n   + Incorrect manifest specified by developer\n   + Server is not available anymore\n   + Access denied\n   + Internal server error`;
+            throw `ERROR: ${url}\nCan't download file from update server (${requestPayload.status} - ${requestPayload.statusText})! Possible causes:\n   + Incorrect manifest specified by developer\n   + Server is not available anymore\n   + Access denied\n   + Internal server error`;
 
         let updatedFile = await requestPayload.buffer();
-        
+
         if (receiveAs === "json") {
             try {
                 JSON.parse(updatedFile);
-            } catch(e) {
+            } catch (e) {
                 throw `ERROR: ${ url }\nMalformed JSON file!\n${e}`;
             }
         }
-        
+
         if (expectedHash && expectedHash !== hash(updatedFile))
-            throw "ERROR: " + url + "\nDownloaded file doesn't match hash specified in patch manifest! Possible causes:\n   + Incorrect manifest specified by developer\n   + NoPing (if you're using it) has a bug that can fuck up the download";
+            throw `ERROR: ${url}\nDownloaded file doesn't match hash specified in patch manifest! Possible causes:\n   + Incorrect manifest specified by developer\n   + NoPing (if you're using it) has a bug that can fuck up the download`;
 
         forcedirSync(path.dirname(filepath));
         fs.writeFileSync(filepath, updatedFile);
         return [file, true, ""];
     } catch (e) {
         let err = e;
-        if (drmKey && err.message) err.message = err.message.split(`drmkey=${drmKey}`).join("drmkey=[censored]")
+        if (drmKey && err.message) err.message = err.message.split(`drmkey=${drmKey}`).join("drmkey=[censored]");
         return [file, false, err];
     }
 }
@@ -262,7 +262,7 @@ async function autoUpdate(moduleBase, updatelog, updatelimit) {
 
                     if (!moduleConfigChanged) {
                         if (failedFiles.length > 0)
-                            throw "Failed to update the following module files:\n - " + failedFiles.join("\n - ");
+                            throw `Failed to update the following module files:\n - ${ failedFiles.join("\n - ")}`;
 
                         successModules.push({
                             name: moduleInfo.rawName

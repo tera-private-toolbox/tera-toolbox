@@ -261,7 +261,7 @@ let updatelog = false;
 let noselfupdate = false;
 
 const config = require('./config').loadConfig(true);
-if( config[1] > 0) console.warn('warn:[update] WARNING: An error occurred while trying to read the config file! Falling back to default values.');
+if (config[1] > 0) console.warn('warn:[update] WARNING: An error occurred while trying to read the config file! Falling back to default values.');
 if (config[0].branch) branch = config[0].branch.toLowerCase();
 updatelog = !!config[0].updatelog;
 noselfupdate = !!config[0].noselfupdate;
@@ -272,13 +272,12 @@ noselfupdate = !!config[0].noselfupdate;
 // Boot
 if (!app.requestSingleInstanceLock()) {
     app.quit();
-    return;
+} else {
+    app.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required");
+    app.commandLine.appendSwitch("force_low_power_gpu");
+
+    if (app.isReady())
+        main();
+    else
+        app.on('ready', main);
 }
-
-app.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required");
-app.commandLine.appendSwitch("force_low_power_gpu");
-
-if (app.isReady())
-    main();
-else
-    app.on('ready', main);

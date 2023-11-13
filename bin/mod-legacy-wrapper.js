@@ -23,7 +23,7 @@ function ClientModWrapper(info, implementation) {
             let installedGPKs = [];
 
             let modWrapper = new Proxy(Object.create(null), {
-                get: function (target, prop, receiver) {
+                get: function(target, prop, receiver) {
                     switch (prop) {
                         case 'name': {
                             DeprecationWarning(mod, prop);
@@ -50,7 +50,7 @@ function ClientModWrapper(info, implementation) {
             super(modWrapper);
             this.install = installer => installedGPKs.forEach(file => installer.gpk(...file));
         }
-    }
+    };
 }
 
 function NetworkModWrapper(info, implementation) {
@@ -71,7 +71,7 @@ function NetworkModWrapper(info, implementation) {
             });
 
             let modWrapper = new Proxy(Object.create(null), {
-                get: function (target, prop, receiver) {
+                get: function(target, prop, receiver) {
                     switch (prop) {
                         case 'name': {
                             DeprecationWarning(mod, prop);
@@ -96,11 +96,11 @@ function NetworkModWrapper(info, implementation) {
 
             super(modWrapper);
         }
-    }
+    };
 }
 
 module.exports = function ModLegacyWrapper(info, implementation) {
     if (info.keywords.includes('client'))
         return { ClientMod: ClientModWrapper(info, implementation) };
     return { NetworkMod: NetworkModWrapper(info, implementation) };
-}
+};

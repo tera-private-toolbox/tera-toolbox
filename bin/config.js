@@ -3,9 +3,7 @@ const fs = require('fs');
 const { LanguageNames } = require('tera-toolbox-mui');
 const ConfigFilePath = path.join(__dirname, '..', 'config.json');
 
-const bigIntSerializator = (key, value) => {
-    return typeof value === "bigint" ? `BIGINT:${value}` : value;
-};
+const bigIntSerializator = (key, value) => (typeof value === "bigint" ? `BIGINT:${value}` : value);
 
 const bigIntDeserializator = (key, value) => {
     if (typeof value === "string" && value.startsWith("BIGINT:")) {

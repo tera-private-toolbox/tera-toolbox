@@ -95,14 +95,14 @@ class ModManager {
             if (this.isCoreMod(mod.name) && !this.isLoaded(mod.name))
                 this.load(mod.name);
         });
-        
+
         // Then load other mods
         this.installedMods.forEach(mod => {
             if (!this.isCoreMod(mod.name) && !this.isLoaded(mod.name))
                 this.load(mod.name);
         });
     }
-    
+
     unloadAll() {
         // Unload non-core mods first
         this.loadedMods.forEach(mod => {
@@ -257,4 +257,4 @@ class ModManager {
     }
 }
 
-module.exports = ModManager; 
+module.exports = ModManager;

@@ -34,7 +34,7 @@ function NodeVersionCheck() {
 // Load and validate configuration
 function LoadConfiguration() {
     const resultArray = require('./config').loadConfig(true);
-    if(resultArray[1] > 0) 
+    if (resultArray[1] > 0)
         console.error(mui.get('loader-cli/warning-config-restore'));
 
     return resultArray[0];
@@ -60,7 +60,7 @@ function RunProxy(ModuleFolder, ProxyConfig) {
     let proxy = new TeraProxy(ModuleFolder, DataFolder, ProxyConfig);
     try {
         // Switch to highest process priority so we don't starve because of game client using all CPU
-        const { setHighestProcessPriority } = require("./utils");
+        const { setHighestProcessPriority } = require('./utils');
         setHighestProcessPriority();
 
         // Start proxy
@@ -111,7 +111,7 @@ initGlobalSettings(false).then(() => {
                 InitializeMUI(ProxyConfig.uilanguage);
                 global.TeraProxy.DevMode = !!ProxyConfig.devmode;
                 global.TeraProxy.GUIMode = false;
-                    
+
                 // Auto-update mods and run
                 if (ProxyConfig.noupdate) {
                     console.warn(mui.get('loader-cli/warning-noupdate-1'));
@@ -130,7 +130,7 @@ initGlobalSettings(false).then(() => {
                         console.error(e);
                     }).finally(() => {
                         RunProxy(ModuleFolder, ProxyConfig);
-                    })
+                    });
                 }
             }
         }

@@ -96,7 +96,7 @@ let updatelog = false;
 let noselfupdate = false;
 
 const config = require('./config').loadConfig(true);
-if( config[1] > 0) console.warn('[update] WARNING: An error occurred while trying to read the config file! Falling back to default values.');
+if (config[1] > 0) console.warn('[update] WARNING: An error occurred while trying to read the config file! Falling back to default values.');
 if (config[0].branch) branch = config[0].branch.toLowerCase();
 updatelog = !!config[0].updatelog;
 noselfupdate = !!config[0].noselfupdate;
