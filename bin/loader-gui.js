@@ -82,12 +82,29 @@ async function GetInstallableMods(forceRefresh = false) {
 let proxy = null;
 let proxyRunning = false;
 
-function _StartProxy(moduleFolder, proxyConfig) {
-    if (proxy || proxyRunning)
-        return false;
+async function StartProxy(moduleFolder, proxyConfig) {
+    if (proxyConfig.noupdate) {
+        console.warn(mui.get('loader-gui/warning-noupdate-1'));
+        console.warn(mui.get('loader-gui/warning-noupdate-2'));
+        console.warn(mui.get('loader-gui/warning-noupdate-3'));
+        console.warn(mui.get('loader-gui/warning-noupdate-4'));
+        console.warn(mui.get('loader-gui/warning-noupdate-5'));
+    } else {
+        // Auto-update mods and run, we will run the proxy even if the modules are not updated
+        const autoUpdate = require('./update');
+        try {
+            const updateResult = await autoUpdate(moduleFolder, proxyConfig.updatelog, true);
+            updateResult.legacy.forEach(mod => console.warn(mui.get('loader-gui/warning-update-mod-not-supported', { 'name': mod.name })));
+            updateResult.failed.forEach(mod => console.error(mui.get('loader-gui/error-update-mod-failed', { 'name': mod.name })));
+        } catch (e) {
+            console.error(mui.get('loader-gui/error-update-failed'));
+            console.error(e);
+        }
+    }
 
     const TeraProxy = require('./proxy');
     proxy = new TeraProxy(moduleFolder, DataFolder, proxyConfig);
+
     try {
         // Switch to highest process priority so we don't starve because of game client using all CPU
         const { setHighestProcessPriority } = require('./utils');
@@ -99,38 +116,11 @@ function _StartProxy(moduleFolder, proxyConfig) {
         return true;
     } catch (_) {
         console.error(mui.get('loader-gui/error-cannot-start-proxy'));
+
         proxy = null;
         proxyRunning = false;
         return false;
     }
-}
-
-async function StartProxy(moduleFolder, proxyConfig) {
-    if (proxy || proxyRunning)
-        return false;
-
-    if (proxyConfig.noupdate) {
-        console.warn(mui.get('loader-gui/warning-noupdate-1'));
-        console.warn(mui.get('loader-gui/warning-noupdate-2'));
-        console.warn(mui.get('loader-gui/warning-noupdate-3'));
-        console.warn(mui.get('loader-gui/warning-noupdate-4'));
-        console.warn(mui.get('loader-gui/warning-noupdate-5'));
-
-        return _StartProxy(moduleFolder, proxyConfig);
-    } else {
-        const autoUpdate = require('./update');
-
-        try {
-            const updateResult = await autoUpdate(moduleFolder, proxyConfig.updatelog, true);
-            updateResult.legacy.forEach(mod => console.warn(mui.get('loader-gui/warning-update-mod-not-supported', { 'name': mod.name })));
-            updateResult.failed.forEach(mod => console.error(mui.get('loader-gui/error-update-mod-failed', { 'name': mod.name })));
-        } catch (e) {
-            console.error(mui.get('loader-gui/error-update-failed'));
-            console.error(e);
-        }
-    }
-
-    return _StartProxy(moduleFolder, proxyConfig);
 }
 
 async function StopProxy() {
