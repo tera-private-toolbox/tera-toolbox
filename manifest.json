@@ -88,7 +88,7 @@
 		"node_modules/tera-mod-ui/settings.js": "a1696669e34869bf7b385fc6a54dac20094354aa7168800aa8e5e1cb32178474",
 		"node_modules/tera-mod-ui/settings_ui/icon.ico": "51f7165d478b2da5ac0a56cb27cf0080a81b9af55e40a9bbe38bf0933a8b0e6b",
 		"node_modules/tera-mod-ui/settings_ui/index.html": "24de37677279abc27fed177c80da77c9dde153fb32a6753c68a9abc267e71dfb",
-		"node_modules/tera-network-crypto/bin/tera_network_crypto_93.node": "5473ebaf1ebe63a64670081341a932acd65471740dd5d75a08fc83681143f647",
+		"node_modules/tera-network-crypto/bin/tera_network_crypto_93.node": "00ea3f683581809dc9a59eb20e6eca4dfb02cbba978bf5d093da83274e118cc7",
 		"node_modules/tera-network-crypto/bin/tera_network_crypto_99.node": "1743586659b270c7ad2037f2cdd7ec7d5a9aed77cdf167c6a95c7a6d02574408",
 		"node_modules/tera-network-crypto/index.js": "e547161a6d8e88a7011c5cce86b89893eeafa14fbc42d3804b7ba7515420ba4a",
 		"node_modules/tera-network-crypto/LICENSE": "6944b6996a539b40daa8469e43684fd6f4965f50c1ae6bf2cd9ff6c881a5d450",
