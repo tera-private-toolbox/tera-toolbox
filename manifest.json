@@ -85,7 +85,7 @@
 		"node_modules/tera-mod-ui/index.js": "431ff7e0c90cc401c614df008769a013c3e800ee18e23586936e03497596362d",
 		"node_modules/tera-mod-ui/README.md": "b08543a4e153b9fbf72ac1dc63463a762a847ed376026e7971567a07528ede17",
 		"node_modules/tera-mod-ui/renderer.js": "daec25e8489c9b98711dfcc37068daa7130f5e607bba8f9fea287ce73ccda2f3",
-		"node_modules/tera-mod-ui/settings.js": "a1696669e34869bf7b385fc6a54dac20094354aa7168800aa8e5e1cb32178474",
+		"node_modules/tera-mod-ui/settings.js": "b05045e53743ccafad08dbee9ee718eb59dc8b7f5c4c2b0e8affde2c40786ca0",
 		"node_modules/tera-mod-ui/settings_ui/icon.ico": "51f7165d478b2da5ac0a56cb27cf0080a81b9af55e40a9bbe38bf0933a8b0e6b",
 		"node_modules/tera-mod-ui/settings_ui/index.html": "24de37677279abc27fed177c80da77c9dde153fb32a6753c68a9abc267e71dfb",
 		"node_modules/tera-network-crypto/bin/tera_network_crypto_93.node": "00ea3f683581809dc9a59eb20e6eca4dfb02cbba978bf5d093da83274e118cc7",
@@ -140,6 +140,6 @@
 		"node_modules/tera-mod-ui/settings_ui/fonts/roboto-latin-400-normal.woff2": "f6734f8177112c0839b961f96d813fcb189d81b60e96c33278c1983b6f419615",
 		"node_modules/tera-mod-ui/settings_ui/fonts/roboto-latin-ext-400-normal.woff2": "3c23eb02de6b34e30f18cfb7167abd81a2cedfd1da60dfcb71989517ab3fb431",
 		"node_modules/tera-mod-ui/settings_ui/fonts/roboto-vietnamese-400-normal.woff2": "77b24796a3d4ab521f66765651875338ed50cb9306cfe4603a3e79618e429cec",
-		"node_modules/tera-mod-ui/settings_ui/js/app.js": "eadcd1928a4f2154714e7aa7d767176645ca2ca1c929d78c31ad48abec3697ac"
+		"node_modules/tera-mod-ui/settings_ui/js/app.js": "8b7cc7b58a8cb9b40112e37dfe1b470403f7bcfc9626156f667325424572d361"
 	}
 }
