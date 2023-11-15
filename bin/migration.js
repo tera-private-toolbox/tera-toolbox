@@ -182,6 +182,10 @@ function ToolboxMigration() {
     tryUninstallMod('tcc-chat-link');
     tryUninstallMod('caalistatetracker');
     tryUninstallMod('caalilogger');
+
+    // Delete already built-in mods (see "bugfix")
+    tryUninstallMod('ngspfix');
+    tryUninstallMod('ngspfix.js');
 }
 
 module.exports = { ToolboxMigration };
