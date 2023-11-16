@@ -15,9 +15,14 @@ const bigIntDeserializator = (key, value) => {
 const MAX_HANDLED_DURATION = 2147483647n;
 
 const setDuration = (delay) => {
-    let wrappedValue = typeof delay === "bigint" ? delay : BigInt(Math.round(delay));
+    let wrappedValue = delay;
 
-    if (wrappedValue > MAX_HANDLED_DURATION) throw new RangeError("Delay value is out of range");
+    if (typeof delay === "bigint" || !isNaN(delay)) {
+        wrappedValue = typeof delay === "bigint" ? delay : BigInt(Math.round(delay));
+
+        if (wrappedValue > MAX_HANDLED_DURATION)
+            throw new RangeError("Delay value is out of range");
+    }
 
     return Number(wrappedValue);
 };
