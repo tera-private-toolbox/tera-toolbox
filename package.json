@@ -1,6 +1,6 @@
 {
   "name": "tera-toolbox",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Comprehensive modding framework for TERA.",
   "repository": {
     "type": "git",
@@ -12,10 +12,11 @@
   "author": "Caali",
   "contributors": [
     "Pinkie Pie",
-    "meishu"
+    "meishu",
+    "JKQ"
   ],
   "engines": {
-    "node": ">=11.4.0"
+    "node": ">=16.9.1"
   },
   "bugs": {
     "url": "https://github.com/tera-private-toolbox/tera-toolbox/issues"
