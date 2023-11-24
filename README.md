@@ -1,22 +1,13 @@
-# :information_source: Patch 92.04 and 100.02 (x64) support
+# TERA Toolbox Private Beta
+A future update of TERA Toolbox, which includes a complete GUI overhaul and a migration to a newer version of Electron, which should overall provide better performance and stability.  Based on the latest beta-branch of the official repository, many fixes and improvements have been made.
 
-* 🇺🇸 TERA Toolbox for patch 92.03, 92.04 and 100.02 (x64) with auto-updates of all supported modules. You can get some modules available on the `Get More Mods` tab.
+## Download
 
-* 🇷🇺 TERA Toolbox для патчей 92.03, 92.04 и 100.02 (x64) с автоматическим обновлением всех поддерживаемых модулей. Получить некоторые доступные модули можно на вкладке `Скачать модули`.
-
-## TERA Toolbox
-* Next generation of Tera-Proxy: Automatic updates, a graphical user interface, automated client mods, a direct connection to the game client (allowing e.g. realtime datacenter queries), and a lot more!
-* Please check out [the documentation](doc/main.md) (especially if you want to develop your own modules)!
-* Originally forked from https://github.com/tera-toolbox/tera-toolbox (latest patch 115).
+- Installer: https://git.teragame.su/attachments/3d1dde89-ee16-4145-b6f0-61fc12255e38
+- Git repository: https://git.teragame.su/tera-private-toolbox/tera-toolbox-beta
 
 ## Installation Instructions
-* Download and run the setup from [GitHub](https://github.com/tera-private-toolbox/tera-toolbox/releases/download/teratoolbox-setup/TeraToolboxSetup.exe).
-* Follow the installation wizard instructions. A manual installation from GitHub is possible (install Node.JS and download this repository), but not recommended!
-* Run the `TeraToolbox.exe` in the installation folder if you want to use toolbox with a graphical user interface (GUI; highly recommended!), or `TeraToolboxCLI.exe` in the installation folder for a command line interface (CLI).
-* The first startup after installing TERA Toolbox may take a while, depending on your internet connection. This is because all required files will be downloaded and updated automatically.
-* The most popular mods are already pre-installed for your convenience - check out the `My Mods` page. If you don't want to use a particular module, just uninstall or disable it there.
-* Check out the `Get More Mods` page for mods you want to install, and the `Settings` page to configure TERA Toolbox according to your needs.
-* Once you're all set, press the `Start!` button in the top right corner, then start the game as usual.
 
-## Community
-* Join our Discord server https://discord.gg/CZMYNhXwwS
+Clone this repository or use the installer to install this version separately. To migrate modules from the current version of TERA Toolbox, just move or copy your **mods** folder to the installation path of this version.
+
+As this version is under testing, please ask for any questions or issues on our discord: https://discord.gg/CZMYNhXwwS
