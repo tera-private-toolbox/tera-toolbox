@@ -140,6 +140,6 @@
 		"node_modules/tera-mod-ui/settings_ui/fonts/roboto-latin-400-normal.woff2": "f6734f8177112c0839b961f96d813fcb189d81b60e96c33278c1983b6f419615",
 		"node_modules/tera-mod-ui/settings_ui/fonts/roboto-latin-ext-400-normal.woff2": "3c23eb02de6b34e30f18cfb7167abd81a2cedfd1da60dfcb71989517ab3fb431",
 		"node_modules/tera-mod-ui/settings_ui/fonts/roboto-vietnamese-400-normal.woff2": "77b24796a3d4ab521f66765651875338ed50cb9306cfe4603a3e79618e429cec",
-		"node_modules/tera-mod-ui/settings_ui/js/app.js": "8b7cc7b58a8cb9b40112e37dfe1b470403f7bcfc9626156f667325424572d361"
+		"node_modules/tera-mod-ui/settings_ui/js/app.js": "f5ca2a12384231a09c19dfd80930c452f2576c795e7b541bc1e6b57db0e1297f"
 	}
 }
