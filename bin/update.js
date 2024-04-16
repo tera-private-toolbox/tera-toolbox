@@ -52,9 +52,17 @@ let HTTPSAgent = new https.Agent({
     keepAlive: true
 });
 
+let overrideHostname = null;
+
 async function autoUpdateFile(file, filepath, url, drmKey, expectedHash = null, receiveAs = "buffer") {
     try {
         let fileUrl = new URL(url);
+
+        // part of temp fix for unavailable raw.githubusercontent.com from some regions and counties
+        if (overrideHostname && fileUrl.hostname === 'raw.githubusercontent.com') {
+            fileUrl.hostname = overrideHostname;
+        }
+
         if (drmKey)
             fileUrl.searchParams.append('drmkey', drmKey);
 
@@ -179,6 +187,18 @@ async function autoUpdate(moduleBase, updatelog, updatelimit) {
     console.log(mui.get('update/started'));
     forcedirSync(moduleBase);
     await generateBlacklist();
+
+    // Temp fix for unavailable raw.githubusercontent.com from some regions and counties
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 1000);
+    try {
+        await fetch('https://raw.githubusercontent.com/', { // check site available
+            signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+    } catch (_) {
+        overrideHostname = 'github.teragame.su';
+    }
 
     let successModules = [];
     let legacyModules = [];
