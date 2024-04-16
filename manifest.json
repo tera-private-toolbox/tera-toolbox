@@ -35,7 +35,7 @@
 		"bin/proxy.js": "a03415608cb17cd4ce3781e3613cb2aba3da6885497fb4b4c920227f19ef5cc2",
 		"bin/update-electron.js": "ee2868dde6572dd3aee97f6b45a3b90b071e46ed91ded2513ae4ef298c9cad46",
 		"bin/update-self.js": "1442fe94d4f51d9dd037c589f3c40da71d0322c8f28176c9f7952a5c29f199aa",
-		"bin/update.js": "ca305e7186c09b1341b0d823a5142b4733a99e970b83492e854329e7519acf62",
+		"bin/update.js": "1c1bb5b525738bd40525677f843c568ee1ed8f415325a914f42a8a5384fe9a31",
 		"bin/utils.js": "7a63e8cf007a96c5099eb1dca1cf54689b14e2964c0ae849c8b2baac8adac509",
 		"data/data.json": "7f77405b96f9384bdb33bcca7c70b8137bca68626a03bac3c22e1912a439a338",
 		"data/definitions/README.md": "3bea1b2efa503a07a01cdcd63945b61e59a0426a2790b0a32605e8362630400a",
