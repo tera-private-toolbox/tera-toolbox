@@ -1,6 +1,6 @@
 {
 	"files": {
-		"bin/config.js": "747abf9b24c45951949b8538a7ae58e4b4757982742c3e9d3f09908440a618c5",
+		"bin/config.js": "9467819d94631380959e5696e0dfdf2b2156394b8238d3b8ded64598058eef9b",
 		"bin/connection-manager.js": "032d0e5c021ffc3d0dcc5c3e33326239be010a19c4ac710ef0e48e94b5235d94",
 		"bin/gui/assets/icon.ico": "51f7165d478b2da5ac0a56cb27cf0080a81b9af55e40a9bbe38bf0933a8b0e6b",
 		"bin/gui/assets/tb.gif": "e018e504fb1821b1e6973484cd78730f1ce0f1c5f0833d7be2477027bde62c9e",

@@ -24,7 +24,8 @@ const getUiLanguage = () => {
 
 const uilanguage = getUiLanguage();
 const defaultSettings = {
-    branch: 'master',
+    version: 1,
+    branch: 'beta',
     uilanguage,
     updatelog: false,
     devmode: false,
@@ -42,6 +43,7 @@ function loadConfig(returnArray = false) {
     try {
         result = fs.readFileSync(ConfigFilePath, 'utf8');
         result = JSON.parse(result, bigIntDeserializator);
+        result = migrateConfig(result);
         return returnArray ? [result, 0] : result;
     } catch (_) {
         return returnArray ? [defaultSettings, 1] : defaultSettings;
@@ -50,6 +52,20 @@ function loadConfig(returnArray = false) {
 
 function saveConfig(newConfig) {
     fs.writeFileSync(ConfigFilePath, JSON.stringify(newConfig, bigIntSerializator, 4));
+}
+
+function migrateConfig(config) {
+    const version = config.version || 0;
+    if (version < defaultSettings.version) {
+        // Migrations
+        if (version < 1) {
+            config.branch = defaultSettings.branch;
+        }
+        config.version = defaultSettings.version;
+        config = { ...defaultSettings, ...config };
+        saveConfig(config);
+    }
+    return config;
 }
 
 module.exports = { loadConfig, saveConfig };
