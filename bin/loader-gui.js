@@ -15,6 +15,7 @@ function InitializeMUI(language) {
 
 // Configuration
 function LoadConfiguration() {
+    delete require.cache[require.resolve('./config')];
     const resultArray = require('./config').loadConfig(true);
     if (resultArray[1] > 0) {
         const { dialog } = require('electron');

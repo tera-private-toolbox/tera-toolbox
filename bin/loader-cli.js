@@ -33,6 +33,7 @@ function NodeVersionCheck() {
 
 // Load and validate configuration
 function LoadConfiguration() {
+    delete require.cache[require.resolve('./config')];
     const resultArray = require('./config').loadConfig(true);
     if (resultArray[1] > 0)
         console.error(mui.get('loader-cli/warning-config-restore'));
