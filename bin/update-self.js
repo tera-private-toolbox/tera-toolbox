@@ -7,7 +7,8 @@ const EventEmitter = require('events');
 
 // Constants
 const AutoUpdateServers = [
-    'https://git.teragame.su/tera-private-toolbox/tera-toolbox-beta/raw/'
+    'https://git.teragame.su/tera-private-toolbox/tera-toolbox-beta/raw/',
+    'https://raw.githubusercontent.com/tera-private-toolbox/tera-toolbox/'
 ];
 
 // Implementation
