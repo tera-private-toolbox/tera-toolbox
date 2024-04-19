@@ -7,7 +7,8 @@ const EventEmitter = require('events');
 
 // Constants
 const AutoUpdateServers = [
-    'https://git.teragame.su/tera-private-toolbox/tera-toolbox-beta/raw/'
+    'https://raw.githubusercontent.com/tera-private-toolbox/tera-toolbox/',
+    'https://git.teragame.su/tera-private-toolbox/tera-toolbox/raw/',
 ];
 
 // Implementation
@@ -35,7 +36,11 @@ class Updater extends EventEmitter {
         super();
         this.setMaxListeners(0);
 
-        this.branch = branch;
+        // Fallback
+        delete require.cache[require.resolve('./config')];
+        const config = require('./config').loadConfig();
+
+        this.branch = config.branch || branch;
     }
 
     buildPath(relpath) { return path.join(__dirname, '..', relpath); }
