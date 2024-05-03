@@ -27,7 +27,7 @@
 		"bin/index-gui.js": "6cf3c65d0dff084a0c14438716616c27e228024305721936675b19f37a719cb5",
 		"bin/install-electron.js": "17b03f96f54dccb40eaba88b9ab21c14609eac91cb378ff0883b65b0078f105b",
 		"bin/loader-cli.js": "99f0b5f3e4045a577321ed06e8af1b0fddc4cc3edf8467937cf676842ee5adba",
-		"bin/loader-gui.js": "56b47c9c43fb739c7a62dc0fb1acd49ba17afbb967b52128a44bd22e3c185a76",
+		"bin/loader-gui.js": "05e38f5c65a48f54ede358545a0c579ff355cc12749eb30d3ab13c02f09c1d89",
 		"bin/migration.js": "3cb7c3d168effe5c6f26fb5806ce611cb330472ef8eb75810d9d2e8b79a9fa6e",
 		"bin/mod-legacy-wrapper.js": "aba7fa3163510b0f791f5467630d0d9e7e29500f7576589090bce10a7a7f2b96",
 		"bin/mod-manager.js": "b5a92a3ffc09fd7ac51580c327cac8aa0ce2055253d1d4becc311b93520fc897",

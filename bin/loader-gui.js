@@ -507,6 +507,10 @@ class TeraProxyGUI {
     close() {
         if (this.window !== null) {
             StopUpdateCheck();
+
+            this.window.close();
+            this.window = null;
+
             app.exit();
         }
     }
