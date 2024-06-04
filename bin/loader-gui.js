@@ -364,7 +364,8 @@ class TeraProxyGUI {
                 logtimes: true,
                 width: 880,
                 height: 500,
-                maximized: false
+                maximized: false,
+                loghtml: false
             };
 
             SaveConfiguration(config);
