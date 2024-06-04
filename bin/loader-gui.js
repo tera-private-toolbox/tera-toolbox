@@ -375,6 +375,11 @@ class TeraProxyGUI {
                 SaveConfiguration(config);
             }
 
+            if (config.gui.loghtml === undefined) {
+                config.gui.loghtml = false;
+                SaveConfiguration(config);
+            }
+
             // Migrate theme
             if (['classic-white', 'classic-pink', 'white', 'pink'].includes(config.gui.theme)) {
                 config.gui.theme = 'light';
