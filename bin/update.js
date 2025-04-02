@@ -45,40 +45,20 @@ function walkdir(dir, listFiles = true, listDirs = false, listRootDir = "") {
     return results;
 }
 
-let overrideGitHubIp = false;
+let HTTPAgent = new http.Agent({
+    keepAlive: true
+});
+let HTTPSAgent = new https.Agent({
+    keepAlive: true
+});
 
 async function autoUpdateFile(file, filepath, url, drmKey, expectedHash = null, receiveAs = "buffer") {
-    let HTTPAgent = new http.Agent({
-        keepAlive: true
-    });
-    let HTTPSAgent = new https.Agent({
-        keepAlive: true
-    });
-
     try {
         let fileUrl = new URL(url);
-
         if (drmKey)
             fileUrl.searchParams.append('drmkey', drmKey);
 
-        // Temp fix for unavailable raw.githubusercontent.com from some regions and counties
-        if (overrideGitHubIp && fileUrl.hostname === 'raw.githubusercontent.com') {
-            const ips = [
-                '185.199.108.133',
-                '185.199.109.133',
-                '185.199.111.133'
-            ];
-            const lookup = (_hostname, _options, callback) => callback(null, ips[Math.floor(Math.random() * ips.length)], 4);
-            HTTPAgent = new http.Agent({
-                keepAlive: true, lookup
-            });
-            HTTPSAgent = new https.Agent({
-                keepAlive: true, lookup
-            });
-        }
-
-        let requestPayload = await fetch(fileUrl, { "agent": (fileUrl.protocol === "https:") ? HTTPSAgent : HTTPAgent });
-
+        const requestPayload = await fetch(fileUrl, { "agent": (fileUrl.protocol === "https:") ? HTTPSAgent : HTTPAgent });
         if (!requestPayload.ok)
             throw `ERROR: ${url}\nCan't download file from update server (${requestPayload.status} - ${requestPayload.statusText})! Possible causes:\n   + Incorrect manifest specified by developer\n   + Server is not available anymore\n   + Access denied\n   + Internal server error`;
 
@@ -199,18 +179,6 @@ async function autoUpdate(moduleBase, updatelog, updatelimit) {
     console.log(mui.get('update/started'));
     forcedirSync(moduleBase);
     await generateBlacklist();
-
-    // Temp fix for unavailable raw.githubusercontent.com from some regions and counties
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2000);
-    try {
-        await fetch('https://raw.githubusercontent.com/', { // check site available
-            signal: controller.signal
-        });
-        clearTimeout(timeoutId);
-    } catch (_) {
-        overrideGitHubIp = true;
-    }
 
     let successModules = [];
     let legacyModules = [];
